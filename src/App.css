@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-
-.App-header {
-  background-color: #282c34;
+.join-to-chat {
+  background-color: #5b8cef;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,4 +11,25 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.username,
+.room {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid rgb(71, 71, 241);
+  border-radius: 10px;
+}
+
+.join-btn {
+  padding: 10px 30px;
+  margin: 10px auto;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(71, 71, 241);
+  border: 2px solid rgb(71, 71, 241);
+  border-radius: 10px;
+
 }
