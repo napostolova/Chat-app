@@ -27,7 +27,7 @@ function Chat({ socket, username, room }) {
 
     return (
         <section className={styles["chat-window"]}>
-            <h2>Live Chat</h2>
+            <h2 className={styles.heading}>Live Chat</h2>
             <section className={styles["chat-body"]}>
                 {messageList.map((messageContent) => {
                     return (
@@ -48,6 +48,7 @@ function Chat({ socket, username, room }) {
             </section>
             <section className={styles["chat-footer"]}>
                 <input type="text" placeholder="Type a message..."
+                className={styles['input-message']}
                     value={currentMessage}
                     onChange={(event) => { setCurrentMessage(event.target.value) }} />
                 <button onClick={sendMessage}><span class="material-symbols-outlined">
