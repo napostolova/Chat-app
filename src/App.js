@@ -17,9 +17,7 @@ function App() {
   const join = () => {
     if (username !== '' && room !== '') {
       socket.emit('join_room', room);
-      setShowChat(true)
-      setUsername('');
-      setRoom('');
+      setShowChat(true);
     }
 
   };
@@ -41,7 +39,7 @@ function App() {
         )
           :
           (
-            <Chat />
+            <Chat socket={socket} username={username} room={room} />
 
           )}
     </div>
