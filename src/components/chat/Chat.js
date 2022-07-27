@@ -25,6 +25,12 @@ function Chat({ socket, username, room }) {
         });
     }, [socket]);
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            sendMessage()
+        }
+    }
+
     return (
         <section className={styles["chat-window"]}>
             <h2 className={styles.heading}>Live Chat</h2>
@@ -50,7 +56,9 @@ function Chat({ socket, username, room }) {
                 <input type="text" placeholder="Type a message..."
                     className={styles['input-message']}
                     value={currentMessage}
-                    onChange={(event) => { setCurrentMessage(event.target.value) }} />
+                    onChange={(event) => { setCurrentMessage(event.target.value) }}
+                    onKeyDown={handleKeyDown}
+                />
                 <button onClick={sendMessage}><span class="material-symbols-outlined">
                     send
                 </span>
