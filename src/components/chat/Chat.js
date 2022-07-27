@@ -31,14 +31,14 @@ function Chat({ socket, username, room }) {
             <section className={styles["chat-body"]}>
                 {messageList.map((messageContent) => {
                     return (
-                        <section key={messageContent.author + Math.random()}>
-                            <div>
+                        <section key={messageContent.author + Math.random()} className={styles[username === messageContent.author ? 'you' : 'other']}>
+                            <div className={styles.author}>
                                 <p>{messageContent.author}</p>
                             </div>
-                            <div>
+                            <div className={styles.message}>
                                 <p>{messageContent.message}</p>
                             </div>
-                            <div>
+                            <div className={styles.time}>
                                 <p>{messageContent.time}</p>
                             </div>
 
@@ -48,7 +48,7 @@ function Chat({ socket, username, room }) {
             </section>
             <section className={styles["chat-footer"]}>
                 <input type="text" placeholder="Type a message..."
-                className={styles['input-message']}
+                    className={styles['input-message']}
                     value={currentMessage}
                     onChange={(event) => { setCurrentMessage(event.target.value) }} />
                 <button onClick={sendMessage}><span class="material-symbols-outlined">
