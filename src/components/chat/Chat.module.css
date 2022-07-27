@@ -19,8 +19,10 @@
 .chat-body {
     height: 60vh;
     width: 40vw;
+    overflow: auto;
     border: 2px solid darkblue;
     background-color: white;
+
 }
 
 .you {
@@ -28,6 +30,7 @@
     flex-direction: column;
     align-items: flex-end;
     padding: 5px;
+
 }
 
 .other {
@@ -40,11 +43,13 @@
 .you .message {
     padding: 5px 10px;
     background-color: rgb(62, 196, 240);
+    max-width: 50%;
 }
 
 .other .message {
     padding: 5px 10px;
     background-color: lightgreen;
+    max-width: 50%;
 }
 
 .author p,
