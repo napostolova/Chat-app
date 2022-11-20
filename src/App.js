@@ -19,8 +19,14 @@ function App() {
       socket.emit('join_room', room);
       setShowChat(true);
     }
-
   };
+
+  const handleJoin = (event) => {
+    if (event.key === 'Enter') {
+      console.log(event);
+      join()
+    }
+  }
 
   return (
     <div className="App">
@@ -32,7 +38,8 @@ function App() {
             <input className="username" type="texte" placeholder="Type your name" value={username}
               onChange={(event) => { setUsername(event.target.value) }} />
             <input className="room" type="text" placeholder="Type room ID" value={room}
-              onChange={(event) => { setRoom(event.target.value) }} />
+              onChange={(event) => { setRoom(event.target.value) }}
+              onKeyDown={handleJoin} />
 
             <button className="join-btn" onClick={join}>JOIN</button>
           </section>
